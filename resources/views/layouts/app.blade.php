@@ -33,7 +33,83 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @guest
+                            @if (Route::has('login')) @endif
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Dashboard') }}</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Student
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Student history') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Documents') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Transfer') }}</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Management
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Partial grades') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Matrícula') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Asignación de materias') }}</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Students') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Teachers') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Acudientes') }}</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Reports
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Constancias') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Classroom report') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Reporte de fallas') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Report card') }}</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Parametrization
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Institution') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Headquarters') }}</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Documento') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Caracterización') }}</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Aspecto') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Área') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Asignatura') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Grado') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Periodo') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Juicio de valoración') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Criterio') }}</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Tipo de documento') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Departamento') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Municipio') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Genero') }}</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Admin
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Manage users') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Manage profiles') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Permissions') }}</a></li>
+                                    </ul>
+                                </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -58,6 +134,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('home') }}">{{ __('Your profile') }}</a>
+                                    <a class="dropdown-item" href="{{ route('home') }}">{{ __('Change password') }}</a>
+                                    <hr class="dropdown-divider">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
