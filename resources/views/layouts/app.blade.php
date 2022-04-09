@@ -94,9 +94,11 @@
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Criterio') }}</a></li>
                                         <li><hr class="dropdown-divider"></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Tipo de documento') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Departamento') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Municipio') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Genero') }}</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Municipio') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Departamento') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('countries') }}">{{ __('Countries') }}</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">

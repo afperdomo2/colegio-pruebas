@@ -17,3 +17,4 @@ Auth::routes();
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/countries', [App\Http\Controllers\CountryController::class, 'index'])->name('countries');
