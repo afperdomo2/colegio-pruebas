@@ -41,17 +41,17 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      Student
+                                      {{ __('Students') }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Student history') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Documents') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Transfer') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Transfers') }}</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Management
+                                        {{ __('Management') }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Partial grades') }}</a></li>
@@ -60,15 +60,15 @@
                                         <li><hr class="dropdown-divider"></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Students') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Teachers') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Acudientes') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Tutors') }}</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Reports
+                                        {{ __('Reports') }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Constancias') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Records') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Classroom report') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Reporte de fallas') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Report card') }}</a></li>
@@ -76,28 +76,27 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Parametrization
+                                        {{ __('Parametrization') }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Institution') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Headquarters') }}</a></li>
                                         <li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Documento') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Documents') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Caracterización') }}</a></li>
                                         <li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Aspecto') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Área') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Asignatura') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Grado') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Periodo') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Aspects') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Areas') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Subjects') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Grades') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Periods') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Juicio de valoración') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Criterio') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Criteria') }}</a></li>
                                         <li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Tipo de documento') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Genero') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Types of documents') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Genders') }}</a></li>
                                         <li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Municipio') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Departamento') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Cities') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Regions') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('countries') }}">{{ __('Countries') }}</a></li>
                                     </ul>
                                 </li>
@@ -106,8 +105,8 @@
                                         Admin
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Manage users') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Manage profiles') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Users') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Profiles') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Permissions') }}</a></li>
                                     </ul>
                                 </li>

@@ -5,15 +5,15 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">List of Countries</h4>
-                    <a href="" class="btn btn-sm btn-success">New Country</a>
-                    <table class="table table-striped|sm|bordered|hover|inverse table-inverse table-responsive">
+                    <h4 class="card-title">{{ __('List of Countries') }}</h4>
+                    <a href="" class="btn btn-sm btn-success">{{ __('Create a new country') }}</a>
+                    <table class="table table-sm table-inverse table-responsive">
                         <thead class="thead-inverse|thead-default">
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
-                                <th>Is active</th>
-                                <th>Options</th>
+                                <th>{{ __('Name') }}</th>
+                                <th>{{ __('Status') }}</th>
+                                <th>{{ __('Options') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -23,8 +23,8 @@
                                         <td>{{ $country->name }}</td>
                                         <td>{{ $country->is_active ? '✅' : '🚫' }}</td>
                                         <td>
-                                            <a href="" class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="" class="btn btn-sm btn-danger">Drop</a>
+                                            <a href="" class="btn btn-sm btn-warning">{{ __('Edit') }}</a>
+                                            <a href="" class="btn btn-sm btn-danger">{{ __('Delete') }}</a>
                                         </td>
                                     </tr>
                                 @endforeach
