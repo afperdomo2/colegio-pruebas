@@ -2,34 +2,58 @@
 
 @section('content')
     <div class="container">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">{{ __('List of Countries') }}</h4>
-                    <a href="" class="btn btn-sm btn-success">{{ __('Create a new country') }}</a>
-                    <table class="table table-sm table-inverse table-responsive">
-                        <thead class="thead-inverse|thead-default">
-                            <tr>
-                                <th>#</th>
-                                <th>{{ __('Name') }}</th>
-                                <th>{{ __('Status') }}</th>
-                                <th>{{ __('Options') }}</th>
-                            </tr>
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10 col-xl-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ __('List of Countries') }}</h4>
+                        <a href="{{ route('createCountry') }}" class="btn btn-sm btn-success">{{ __('Create a new country') }}</a>
+
+                        <table class="table table-sm table-hover border mt-4 mb-1">
+                            <thead class="thead-default">
+                                <tr class="text-center">
+                                    <th class="col-1">#</th>
+                                    <th class="col-6">{{ __('Name') }}</th>
+                                    <th class="col-3">{{ __('Status') }}</th>
+                                    <th class="col-2" colspan="2">{{ __('Options') }}</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 @foreach ($countries as $country)
-                                    <tr>
-                                        <td scope="row">{{ $loop->index + 1 }}</td>
-                                        <td>{{ $country->name }}</td>
-                                        <td>{{ $country->is_active ? '✅' : '🚫' }}</td>
-                                        <td>
-                                            <a href="" class="btn btn-sm btn-warning">{{ __('Edit') }}</a>
-                                            <a href="" class="btn btn-sm btn-danger">{{ __('Delete') }}</a>
+                                    <tr class="align-middle">
+                                        <th class="text-center" scope="row">{{ $loop->index + 1 }}</th>
+                                        <td class="text-capitalize">{{ $country->name }}</td>
+                                        <td class="text-center">
+                                            <a
+                                                href="{{ route('countries') }}/{{ $country->id }}/changeStatus"
+                                                class="btn btn-sm btn-{{ $country->is_active ? 'success' : 'danger' }}"
+                                            >
+                                                {{ $country->is_active ? __('Active') : __('Inactive') }}
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="{{ route('countries') }}/{{ $country->id }}/edit" class="btn btn-sm btn-warning">
+                                                {{ __('Edit') }}
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <form action="{{ route('countries') }}/{{ $country->id }}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-sm btn-danger">{{ __('Delete') }}</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
+                                @if (count($countries) == 0)
+                                    <tr>
+                                        <td colspan="4">{{  __('No records found') }}</td>
+                                    </tr>
+                                @endif
                             </tbody>
-                    </table>
+                        </table>
+
+                    </div>
                 </div>
             </div>
         </div>

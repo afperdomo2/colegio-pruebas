@@ -14,7 +14,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countries = Country::all();
+        $countries = Country::orderBy('name', 'asc')->get();
         return view('country.index', [
             'countries' => $countries
         ]);
@@ -27,7 +27,7 @@ class CountryController extends Controller
      */
     public function create()
     {
-        //
+        return view('country.create');
     }
 
     /**
@@ -38,7 +38,12 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validData = $this->validateData($request);
+
+        $country = new Country();
+        $country->name = $validData['name'];
+        $country->save();
+        return redirect(route('countries'));
     }
 
     /**
@@ -60,7 +65,10 @@ class CountryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $country = Country::findOrFail($id);
+        return view('country.create', [
+            'country' => $country
+        ]);
     }
 
     /**
@@ -72,7 +80,12 @@ class CountryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validData = $this->validateData($request);
+
+        $country = Country::findOrFail($id);
+        $country->name = $validData['name'];
+        $country->save();
+        return redirect(route('countries'));
     }
 
     /**
@@ -83,6 +96,23 @@ class CountryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $country = Country::findOrFail($id);
+        $country->delete();
+        return redirect(route('countries'));
+    }
+
+    public function validateData($request)
+    {
+        return $request->validate([
+            'name' => 'required|min:3'
+        ]);
+    }
+
+    public function changeStatus($id)
+    {
+        $country = Country::findOrFail($id);
+        $country->is_active = ( $country->is_active == 1 ? 0 : 1 );
+        $country->save();
+        return redirect(route('countries'));
     }
 }
