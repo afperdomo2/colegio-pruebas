@@ -18,11 +18,13 @@ Auth::routes();
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/countries', [App\Http\Controllers\CountryController::class, 'index'])->name('countries');
-Route::get('/countries/create', [App\Http\Controllers\CountryController::class, 'create'])->name('createCountry');
-Route::post('/countries', [App\Http\Controllers\CountryController::class, 'store']);
-Route::get('/countries/{id}/edit', [App\Http\Controllers\CountryController::class, 'edit']);
-Route::put('/countries/{id}', [App\Http\Controllers\CountryController::class, 'update']);
-Route::delete('/countries/{id}', [App\Http\Controllers\CountryController::class, 'destroy']);
-Route::get('/countries/{id}/changeStatus', [App\Http\Controllers\CountryController::class, 'changeStatus']);
+Route::controller(App\Http\Controllers\CountryController::class)->group(function () {
+    Route::get('/countries', 'index')->name('countries');
+    Route::get('/countries/create', 'create')->name('createCountry');
+    Route::post('/countries', 'store');
+    Route::get('/countries/{id}/edit', 'edit');
+    Route::put('/countries/{id}', 'update');
+    Route::delete('/countries/{id}', 'destroy');
+    Route::get('/countries/{id}/changeStatus', 'changeStatus');
+});
 
