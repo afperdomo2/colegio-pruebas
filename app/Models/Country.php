@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     use HasFactory;
+
+    public function scopeStatus($query, int $status)
+    {
+        return $query->where('is_active', $status);
+    }
 }

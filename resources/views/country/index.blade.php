@@ -7,6 +7,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">{{ __('List of Countries') }}</h4>
+                        <a href="{{ route('countries') }}" class="btn btn-sm btn-primary">{{ __('Refresh') }}</a>
                         <a href="{{ route('createCountry') }}" class="btn btn-sm btn-success">{{ __('Create a new country') }}</a>
 
                         <table class="table table-sm table-hover border mt-4 mb-1">
