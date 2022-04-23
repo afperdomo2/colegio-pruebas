@@ -16,6 +16,7 @@ class CountryFactory extends Factory
         return [
             'name' => $this->faker->name(5),
             'created_at' => now(),
+            'updated_at' => null,
         ];
     }
 }
