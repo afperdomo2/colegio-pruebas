@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'App\Http\Controllers\HomeController@index');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::controller(App\Http\Controllers\HomeController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/home', 'index')->name('home');
+});
 
 Route::controller(App\Http\Controllers\CountryController::class)->group(function () {
     Route::get('/countries', 'index')->name('countries');
