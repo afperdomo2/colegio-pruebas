@@ -96,7 +96,7 @@
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Genders') }}</a></li>
                                         <li><hr class="dropdown-divider"></li>
                                         <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Cities') }}</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('home') }}">{{ __('Regions') }}</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('regions') }}">{{ __('Regions') }}</a></li>
                                         <li><a class="dropdown-item" href="{{ route('countries') }}">{{ __('Countries') }}</a></li>
                                     </ul>
                                 </li>

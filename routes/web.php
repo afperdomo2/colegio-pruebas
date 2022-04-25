@@ -30,3 +30,12 @@ Route::controller(App\Http\Controllers\CountryController::class)->group(function
     Route::get('/countries/{id}/changeStatus', 'changeStatus');
 });
 
+Route::controller(App\Http\Controllers\RegionController::class)->group(function () {
+    Route::get('/regions', 'index')->name('regions');
+    Route::get('/regions/create', 'create')->name('createRegion');
+    Route::post('/regions', 'store');
+    Route::get('/regions/{id}/edit', 'edit')->name('editRegion');
+    Route::put('/regions/{id}', 'update')->name('updateRegion');
+    Route::put('/regions/{id}/changeStatus', 'changeStatus')->name('changeStatusRegion');
+    Route::delete('/regions/{id}', 'destroy')->name('deleteRegion');
+});
