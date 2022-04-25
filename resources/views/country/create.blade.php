@@ -6,7 +6,7 @@
             <div class="col-md-12 col-lg-10 col-xl-8">
                 <div class="card">
                     <form
-                        action="{{ route('countries') }}/{{ $country->id ?? '' }}"
+                        action="{{ (isset($country->id)) ? route('updateCountry', $country->id) : route('countries') }}"
                         method="POST"
                         autocomplete="off"
                     >

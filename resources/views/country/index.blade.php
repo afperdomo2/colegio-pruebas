@@ -25,20 +25,21 @@
                                         <th class="text-center" scope="row">{{ $loop->index + 1 }}</th>
                                         <td class="text-capitalize">{{ $country->name }}</td>
                                         <td class="text-center">
-                                            <a
-                                                href="{{ route('countries') }}/{{ $country->id }}/changeStatus"
-                                                class="btn btn-sm btn-{{ $country->is_active ? 'success' : 'danger' }}"
-                                            >
-                                                {{ $country->is_active ? __('Active') : __('Inactive') }}
-                                            </a>
+                                            <form action="{{ route('changeStatusCountry', $country->id) }}" method="POST">
+                                                @csrf
+                                                @method('put')
+                                                <button type="submit" class="btn btn-sm btn-{{ $country->is_active ? 'success' : 'danger' }}">
+                                                    {{ $country->is_active ? __('Active') : __('Inactive') }}
+                                                </button>
+                                            </form>
                                         </td>
                                         <td class="text-center">
-                                            <a href="{{ route('countries') }}/{{ $country->id }}/edit" class="btn btn-sm btn-warning">
+                                            <a href="{{ route('editCountry', $country->id) }}" class="btn btn-sm btn-warning">
                                                 {{ __('Edit') }}
                                             </a>
                                         </td>
                                         <td class="text-center">
-                                            <form action="{{ route('countries') }}/{{ $country->id }}" method="POST">
+                                            <form action="{{ route('deleteCountry', $country->id) }}" method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-sm btn-danger">{{ __('Delete') }}</button>

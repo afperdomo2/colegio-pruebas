@@ -24,10 +24,10 @@ Route::controller(App\Http\Controllers\CountryController::class)->group(function
     Route::get('/countries', 'index')->name('countries');
     Route::get('/countries/create', 'create')->name('createCountry');
     Route::post('/countries', 'store');
-    Route::get('/countries/{id}/edit', 'edit');
-    Route::put('/countries/{id}', 'update');
-    Route::delete('/countries/{id}', 'destroy');
-    Route::get('/countries/{id}/changeStatus', 'changeStatus');
+    Route::get('/countries/{id}/edit', 'edit')->name('editCountry');
+    Route::put('/countries/{id}', 'update')->name('updateCountry');
+    Route::put('/countries/{id}/changeStatus', 'changeStatus')->name('changeStatusCountry');
+    Route::delete('/countries/{id}', 'destroy')->name('deleteCountry');
 });
 
 Route::controller(App\Http\Controllers\RegionController::class)->group(function () {
