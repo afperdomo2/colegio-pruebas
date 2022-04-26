@@ -24,7 +24,9 @@ class RegionController extends Controller
             ->where('countries.is_active', 1)
             ->orderBy('countries.name', 'asc')
             ->orderBy('regions.name', 'asc')
-            ->get(['regions.id', 'regions.name', 'regions.is_active', 'regions.country_id']);
+            ->paginate(15, [
+                'regions.id', 'regions.name', 'regions.is_active', 'regions.country_id'
+            ]);
 
         return view('region.index', [
             'regions' => $regions

@@ -56,6 +56,9 @@
                                 @endif
                             </tbody>
                         </table>
+                        <div class="d-flex mt-3">
+                            {{ $regions->links() }}
+                        </div>
 
                     </div>
                 </div>
