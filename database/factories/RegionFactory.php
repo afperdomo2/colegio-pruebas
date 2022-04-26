@@ -16,7 +16,7 @@ class RegionFactory extends Factory
     {
         $countries = Country::pluck('id')->toArray();
         return [
-            'name' => $this->faker->name(5),
+            'name' => $this->faker->firstNameFemale,
             'created_at' => now(),
             'country_id' => $this->faker->randomElement($countries),
             'updated_at' => null,

@@ -14,7 +14,7 @@ class CountryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(5),
+            'name' => $this->faker->lastName,
             'created_at' => now(),
             'updated_at' => null,
         ];
