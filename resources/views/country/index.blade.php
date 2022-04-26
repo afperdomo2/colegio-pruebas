@@ -54,6 +54,9 @@
                                 @endif
                             </tbody>
                         </table>
+                        <div class="d-flex mt-3">
+                            {{ $countries->links() }}
+                        </div>
 
                     </div>
                 </div>
